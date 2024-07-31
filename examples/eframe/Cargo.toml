@@ -5,5 +5,5 @@ edition = "2021"
 publish = false
 
 [dependencies]
-egui_tracing = { path = "../../egui-tracing", features = [ "reexport" ]}
-eframe = "0.27.2"
+egui_tracing = { path = "../../egui-tracing", features = ["reexport"] }
+eframe = "0.28"

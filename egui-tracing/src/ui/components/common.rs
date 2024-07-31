@@ -28,8 +28,9 @@ impl CommonProps {
 
 pub fn set_common_props(ui: &mut Ui, c: &Option<CommonProps>) {
     if let Some(c) = c {
-        if let Some(v) = c.enabled {
-            ui.set_enabled(v);
+        match c.enabled {
+            Some(false) => ui.disable(),
+            _ => {}
         }
         if let Some(v) = c.height {
             ui.set_height(v);
@@ -58,8 +59,9 @@ pub fn set_common_props(ui: &mut Ui, c: &Option<CommonProps>) {
         if let Some(v) = c.row_height {
             ui.set_row_height(v);
         }
-        if let Some(v) = c.visible {
-            ui.set_visible(v);
+        match c.visible {
+            Some(false) => ui.set_invisible(),
+            _ => {}
         }
         if let Some(v) = c.width {
             ui.set_width(v);
